@@ -32,7 +32,7 @@ def seoil_notice(url ,lastPage):
                 }
             )
 
-        for i in range(0, 20):
+        for i in range(0, lastPage):
             print(title_list[i]['title'], title_list[i]['date'], title_list[i]['link'])
 
     return title_list
