@@ -9,5 +9,5 @@ seoil_lastPage = 10
 
 #seoil_noticeList = seoil_notice(seoil_url, seoil_lastPage)
 #seoil_scholarNoticeList = seoil_notice(seoil_scholar_url, seoil_lastPage)
-seoil_libraryNoticeList = seoil_libraryNotice(seoil_library_url, seoil_lastPage)
+#seoil_libraryNoticeList = seoil_libraryNotice(seoil_library_url, seoil_lastPage)
 
