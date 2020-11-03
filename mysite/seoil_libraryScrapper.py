@@ -34,4 +34,4 @@ def seoil_libraryNotice(url, lastPage):
 # #mainWrap > div.sponge-page-guide > dl:nth-child(2n) > dd > span:nth-child(6)
 # #mainWrap > div.sponge-page-guide > dl:nth-child(4) > dd > span:nth-child(6)
 url="http://lib.seoil.ac.kr/Board?n=notice&p="
-seoil_libraryNotice(url, 10)
+#seoil_libraryNotice(url, 10)

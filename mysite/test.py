@@ -21,5 +21,5 @@ semi_title = soup.select('table > tbody > tr > td.al > a > p')
 date = soup.select('table > tbody > tr > td.al > a > time')
 links = soup.find_all('td', {"class": "al"})
 
-for link in links:
-    print("http://hm.seoil.ac.kr" + link.find("a").get('href'))
+'''for link in links:
+    print("http://hm.seoil.ac.kr" + link.find("a").get('href'))'''
