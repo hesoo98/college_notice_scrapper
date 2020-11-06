@@ -17,8 +17,8 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 import django
 django.setup()
 
-DOWNLOAD_DELAY = 3'''
-
+'''
+DOWNLOAD_DELAY = 3
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
