@@ -1,5 +1,4 @@
 import requests
-
 from bs4 import BeautifulSoup
 
 import os
@@ -24,6 +23,7 @@ from collections import ChainMap
 
 
 def seoil_notice(url, lastPage):
+    result = []
     for page in range(lastPage):
         html = requests.get(f"{url}{page+1}")         #f-string
         soup = BeautifulSoup(html.text, 'html.parser')
@@ -32,6 +32,7 @@ def seoil_notice(url, lastPage):
         links = soup.find_all('td', {"class": "al"})
 
         title_list = []
+
         '''title_dict = {}
 
         for t, d, l in semi_title, date, links:
@@ -47,13 +48,14 @@ def seoil_notice(url, lastPage):
                 }
             )
 
-        '''for i in range(0, lastPage):
-            print(title_list[i]['title'], title_list[i]['date'], title_list[i]['link'])'''
+        for i in title_list:
+            result.append(i)
     #title_dict = dict(title_list)
 
     #for i in title_list.items():
-
-    return title_list
+    #print(title_list[0]['title'], title_list[0]['date'], title_list[0]['link'])
+    #print(title_list[9])
+    return result
 
 #seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 10)
 
@@ -62,7 +64,12 @@ def seoil_notice(url, lastPage):
 # 이 명령어는 이 파일이 import가 아닌 python에서 직접 실행할 경우에만 아래 코드가 동작하도록 합니다.
 #title_list len == 20
 if __name__ == '__main__':
-    seoil_notice_list = seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 1)
+    seoil_notice_list = seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 10)
     #for index in range(len(seoil_notice_list)):
-    for item in seoil_notice_list:
-        SeoilNotice(title=item['title'], date=item['date'], url=item['link']).save()
+    for i in seoil_notice_list:
+        SeoilNotice(title=i['title'], date=i['date'], url=i['link']).save()
+
+
+    #for item in seoil_notice_list:
+        #for i in range(0, 10):
+            #SeoilNotice(title=item[i]['title'], date=item[i]['date'], url=item[i]['link']).save()
