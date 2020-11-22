@@ -7,19 +7,18 @@ import django
 django.setup()
 
 from seoilNotice.models import SeoilNotice
-from collections import ChainMap
 
-#   title경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > p
-#   date경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > time
-#title = soup.find("td", {"class":"al"}).find("p").text
+# title경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > p
+# date경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > time
+# title = soup.find("td", {"class":"al"}).find("p").text
 
-#title = soup.find_all("td", {"class": "al"})
-#s = title[1]
+# title = soup.find_all("td", {"class": "al"})
+# s = title[1]
 # a.get_text(strip=True),
 
-#semi_title1 = soup.find("td",{'class':'al'}).find('a').find('p').get_text(strip=True)
-#semi_title2 = semi_title.find('a')
-#html = requests.get("http://hm.seoil.ac.kr/65/76?page=1")
+# semi_title1 = soup.find("td",{'class':'al'}).find('a').find('p').get_text(strip=True)
+# semi_title2 = semi_title.find('a')
+# html = requests.get("http://hm.seoil.ac.kr/65/76?page=1")
 
 
 def seoil_notice(url, lastPage):
@@ -56,6 +55,7 @@ def seoil_notice(url, lastPage):
     #print(title_list[0]['title'], title_list[0]['date'], title_list[0]['link'])
     #print(title_list[9])
     return result
+
 
 #seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 10)
 

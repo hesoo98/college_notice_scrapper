@@ -1,9 +1,13 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
-from seoilNotice.models import SeoilNotice
+from seoilNotice.models import SeoilNotice, EventInfo
 
-class PostListView(ListView):
+'''class PostListView(ListView):
+    model = SeoilNotice'''
+
+
+class NoticeListView(ListView):
     model = SeoilNotice
 
-class PostDetailView(DetailView):
-    model = SeoilNotice
+class EventInfoListView(ListView):
+    model = EventInfo
