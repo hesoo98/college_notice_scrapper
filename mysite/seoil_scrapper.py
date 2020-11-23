@@ -6,7 +6,7 @@ os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
 import django
 django.setup()
 
-from seoilNotice.models import SeoilNotice
+from seoilNotice.models import SeoilNotice, EventInfo
 
 # title경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > p
 # date경로 #contents > div > div.clearfix.con_wrap > div > table > tbody > tr:nth-child(1) > td.al > a > time
@@ -64,12 +64,10 @@ def seoil_notice(url, lastPage):
 # 이 명령어는 이 파일이 import가 아닌 python에서 직접 실행할 경우에만 아래 코드가 동작하도록 합니다.
 #title_list len == 20
 if __name__ == '__main__':
-    seoil_notice_list = seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 10)
-    #for index in range(len(seoil_notice_list)):
+    seoil_notice_list = seoil_notice("http://hm.seoil.ac.kr/65/76?page=", 1)
+    seoil_event_list = seoil_notice("http://hm.seoil.ac.kr/65/69?page=", 1)
     for i in seoil_notice_list:
         SeoilNotice(title=i['title'], date=i['date'], url=i['link']).save()
 
-
-    #for item in seoil_notice_list:
-        #for i in range(0, 10):
-            #SeoilNotice(title=item[i]['title'], date=item[i]['date'], url=item[i]['link']).save()
+    for i in seoil_event_list:
+        EventInfo(title=i['title'], date=i['date'], url=i['link']).save()
