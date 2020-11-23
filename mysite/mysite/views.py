@@ -3,7 +3,7 @@ from django.shortcuts import render
 from django.template import loader
 from django.views.generic import TemplateView
 from django.views.generic import ListView, DayArchiveView
-from seoilNotice.views import SeoilNotice
+from seoilNotice.views import SeoilNotice, EventInfo, BachelorNotice
 
 
 class PostListView(ListView):
@@ -22,9 +22,13 @@ class PostListView(ListView):
 #https://oneone-note.tistory.com/36
 def index(request):
     latest_post_list = SeoilNotice.objects.all().order_by('id')[:5]
+    latest_event_list = EventInfo.objects.all().order_by('id')[:5]
+    latest_bachelor_list = BachelorNotice.objects.all().order_by('id')[:5]
     template = loader.get_template('home.html')
     context = {
         'latest_post_list': latest_post_list,
+        'latest_event_list': latest_event_list,
+        'latest_bachelor_list': latest_bachelor_list,
     }
 
     return HttpResponse(template.render(context, request))

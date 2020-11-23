@@ -28,33 +28,11 @@ li {
 
 <div class="container">
     <div >
-        <h4>행사안내</h4>
+        <h4>서일공지-행사안내</h4>
         <ul class="list-group box">
+            {% for notice in latest_event_list %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-        </ul>
-    </div>
-
-    <div>
-        <h4>공지사항</h4>
-        <ul class="list-group box">
-            {% for notice in latest_post_list %}
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-               <a href="{{ notice.url}}">{{ notice.title }}</a>
+               <a href="{{ notice.url}}" target="_blank">{{ notice.title }}</a>
                 <span class="badge badge-primary badge-pill">{{ notice.date }}</span>
             </li>
             {% endfor %}
@@ -62,28 +40,28 @@ li {
     </div>
 
     <div>
-        <h4>학사공지</h4>
-        <ul class="list-group">
+        <h4>서일공지-공지사항</h4>
+        <ul class="list-group box">
+            {% for notice in latest_post_list %}
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
+               <a href="{{ notice.url}}" target="_blank">{{ notice.title }}</a>
+                <span class="badge badge-primary badge-pill">{{ notice.date }}</span>
             </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
-            <li class="list-group-item d-flex justify-content-between align-items-center">
-                <a href='#'>title</a>
-                <span class="badge badge-primary badge-pill">2020-11-11</span>
-            </li>
+            {% endfor %}
         </ul>
     </div>
 
-
+    <div>
+        <h4>서일공지-학사공지</h4>
+        <ul class="list-group">
+            {% for notice in latest_bachelor_list %}
+            <li class="list-group-item d-flex justify-content-between align-items-center">
+               <a href="{{ notice.url}}" target="_blank">{{ notice.title }}</a>
+                <span class="badge badge-primary badge-pill">{{ notice.date }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
 </div>
 
 <!--
