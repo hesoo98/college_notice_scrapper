@@ -22,4 +22,5 @@ urlpatterns = [
     #path('', PostListView.as_view(), name='home'),
     path('', index, name='home'),
     path('seoilNotice/', include('seoilNotice.urls')),
+    path('libNotice/', include('seoilLibraryNotice.urls')),
 ]

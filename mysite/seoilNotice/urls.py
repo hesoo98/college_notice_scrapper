@@ -1,5 +1,5 @@
 from django.urls import path
-from seoilNotice.views import NoticeListView, EventInfoListView,BachelorNoticeListView
+from seoilNotice.views import NoticeListView, EventInfoListView, BachelorNoticeListView
 
 app_name = 'seoilNotice'
 urlpatterns = [

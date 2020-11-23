@@ -1,3 +1,5 @@
 from django.contrib import admin
+from seoilLibraryNotice.models import NewsInfo, LibNotice
 
-# Register your models here.
+admin.site.register(NewsInfo)
+admin.site.register(LibNotice)
