@@ -10,5 +10,3 @@ class LibNoticeListView(ListView):
 class NewsInfoListView(ListView):
     model = NewsInfo
     context_object_name = 'news'
-
-

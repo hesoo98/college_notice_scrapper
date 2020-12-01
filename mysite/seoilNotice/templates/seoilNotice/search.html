@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}search.html{% endblock %}
+
+{% block content %}
+<form action="." method="post">{% csrf_token %}
+    {{ form.as_table }}
+    <input type="submit" value="Submit" class="btn btn-primary btn-sm">
+</form>
+<br><br>
+
+{% if object_list %}
+{% for post in object_list %}
+    <h2><a href="{{ post.get_absolute_url}}">{{ post.title }}</a> </h2>
+    <p>{{ post.date }}</p>
+{% endfor %}
+
+{% elif search_term %}
+ <b><i>Search Word({{ search_term }}) Not Found</i></b>
+{% endif %}
+{% endblock %}

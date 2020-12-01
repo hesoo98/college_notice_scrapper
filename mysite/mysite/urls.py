@@ -15,12 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from mysite.views import PostListView, HomePageView, index
+from mysite.views import index
+
+from django.conf.urls.static import static
+from django.conf import settings
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    #path('', PostListView.as_view(), name='home'),
     path('', index, name='home'),
     path('seoilNotice/', include('seoilNotice.urls')),
     path('libNotice/', include('seoilLibraryNotice.urls')),
+
 ]
+
+urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

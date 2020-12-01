@@ -9,43 +9,8 @@
 <body style="padding-top:90px;">
 
 
-<!--
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a style="margin-left:40px;" class="navbar-brand" href="{% url 'home'%}"><b>서일공지알림이</b></a>
-
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent" style="margin-left:200px">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">서일공지</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">행사안내</a>
-          <a class="dropdown-item" href="/seoilNotice">공지사항</a>
-          <a class="dropdown-item" href="#">학사공지</a>
-          <a class="dropdown-item" href="#">장학공지</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">취업정보</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">취업정보</a>
-          <a class="dropdown-item" href="#">취업행사</a>
-        </div>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">세방도서관</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">공지사항</a>
-          <a class="dropdown-item" href="#">NEWS</a>
-        </div>
-      </li>
-    </ul>
-  </div>
-</nav>
--->
-
-<nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
-  <a class="navbar-brand" href="{% url 'home' %}"><b>서일공지알림이</b></a>
+  <a class="navbar-brand" href="{% url 'home' %}" style="margin-right:150px;"><b>서일공지알림이</b></a>
 
 
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
@@ -71,15 +36,21 @@
           세방공지
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">공지사항</a>
-          <a class="dropdown-item" href="#  ">NEWS</a>
+          <a class="dropdown-item" href="{% url 'seoilLibraryNotice:notice' %}">공지사항</a>
+          <a class="dropdown-item" href="{% url 'seoilLibraryNotice:event'%}">NEWS</a>
+        </div>
+      </li>
+
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          검색창
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="{% url 'seoilNotice:search' %}">서일공지</a>
         </div>
       </li>
     </ul>
   </div>
-
-
-
 
 </nav>
 
@@ -88,6 +59,13 @@
 
 {% endblock content%}
 </div>
+<hr class="featurette-divider">
+<footer class="container">
+  <p>Bootstrap과 Django를 사용하였습니다.</p>
+  <p>문의사항은 hesoo98@naver.com로 부탁드립니다.</p>
+  <p class="float-right"><a href="#">맨 위로</a> </p>
+
+</footer>
 
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

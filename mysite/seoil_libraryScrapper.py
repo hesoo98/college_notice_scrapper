@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from seoilLibraryNotice.models import LibNotice, NewsInfo
 
 import os
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "mysite.settings")
@@ -7,8 +8,6 @@ import django
 django.setup()
 
 
-
-from seoilLibraryNotice.models import LibNotice, NewsInfo
 #find_next_sibiling()
 #https://stackoverflow.com/questions/31731217/extracting-text-outside-of-a-div-tag-beautifulsoup 외부 텍스트 추춟법
 # https://sodocumentation.net/ko/beautifulsoup/topic/1940/%EC%9C%84%EC%B9%98-%EC%9A%94%EC%86%8C  요소뒤 텍스트 찾기
