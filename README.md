@@ -1,6 +1,9 @@
 # college_notice_scrapper
 
 이 프로젝트는 Django와 파이썬, 간단한 크롤링을 공부하기 위해 만들고 있는 프로젝트입니다.
+대학생때 파이썬과 장고, 크롤링을 공부할때, 만든 작은 사이트입니다.
+
+
 
 프로젝트를 로컬에서 실행시키는 법
 파일을 다운받고, 콘솔창에서 파이썬 가상환경으로 진입합니다.
@@ -15,6 +18,9 @@ python .\manage.py runserver를 실행하면 완료.
 만약 django.db.migrations.exceptions.NodeNotFoundError: Migration seoilNotice.0005_academicnotice dependencies reference nonexistent parent node ('seoilNotice', '0004_eventinfo')
 이러한 오류가 뜬다면 적혀있는데로 seoilNotice 폴더안의 0005~ 하는 파일에 문제가 있다는것이니 지워주고
 저 오류가 안뜰때까지 문제가있는 파일을 지워주고 다시 시도합니다.
+
+Starting development server at http://127.0.0.1:8000/
+이러한 출력물이 뜬다면 브라우저에서 밑줄 친 부분을 넣어 잘 동작하는지 확인합니다.
 
 
 실행화면
