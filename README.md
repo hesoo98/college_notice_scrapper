@@ -15,3 +15,16 @@ python .\manage.py runserver를 실행하면 완료.
 만약 django.db.migrations.exceptions.NodeNotFoundError: Migration seoilNotice.0005_academicnotice dependencies reference nonexistent parent node ('seoilNotice', '0004_eventinfo')
 이러한 오류가 뜬다면 적혀있는데로 seoilNotice 폴더안의 0005~ 하는 파일에 문제가 있다는것이니 지워주고
 저 오류가 안뜰때까지 문제가있는 파일을 지워주고 다시 시도합니다.
+
+
+실행화면
+메인 화면
+![image](https://user-images.githubusercontent.com/8851063/216335192-5596cea7-1656-4e5e-a457-365b8db7d1cd.png)
+<br><br>
+
+서일공지 ->행사 안내
+![image](https://user-images.githubusercontent.com/8851063/216335431-607a9c83-12e8-4a53-bfb6-d00ea371d330.png)
+<br><br>
+검색창 -> 서일공지
+![image](https://user-images.githubusercontent.com/8851063/216335544-b355ec3e-8717-4e8d-a145-eaeb3997fde6.png)
+
